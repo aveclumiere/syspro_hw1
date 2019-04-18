@@ -4,7 +4,7 @@
 #include <dlfcn.h>
 
 void funcReplaced(){
-  void* (funcReplacedp)();
+  void (*funcReplacedp)() = NULL;
   char* error;
 
   funcReplacedp = dlsym(RTLD_NEXT, "funcReplaced");
@@ -17,7 +17,7 @@ void funcReplaced(){
 }
 
 void endFunc(){
-  void* (endFuncp)();
+  void (*endFuncp)() = NULL;
   char* error;
 
   endFuncp = dlsym(RTLD_NEXT, "endFunc");
