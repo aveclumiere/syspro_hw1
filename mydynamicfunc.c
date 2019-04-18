@@ -7,7 +7,7 @@ void funcReplaced(){
   void* (funcReplacedp)();
   char* error;
 
-  funcReplacedp = dlsym(RTND_NEXT, "funcReplaced");
+  funcReplacedp = dlsym(RTLD_NEXT, "funcReplaced");
   if((error = dlerror()) != NULL){
     fputs(error, stderr);
     exit(1);
@@ -20,7 +20,7 @@ void endFunc(){
   void* (endFuncp)();
   char* error;
 
-  endFuncp = dlsym(RTND_NEXT, "endFunc");
+  endFuncp = dlsym(RTLD_NEXT, "endFunc");
   if((error = dlerror()) != NULL){
     fputs(error, stderr);
     exit(1);
