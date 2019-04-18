@@ -6,7 +6,7 @@ intl: myfunc.o funcs.o
 myfunc.o: myfunc.c
 	gcc -c myfunc.c
 
-irtr: mydynamicfunc.so main.o funcs.o
+intr: mydynamicfunc.so main.o funcs.o
 	gcc -L. -o intr main.o -lfuncs -Wl,-rpath,"."
 
 mydynamicfunc.so: mydynamicfunc.c
